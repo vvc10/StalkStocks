@@ -1,0 +1,242 @@
+/* styles.module.css */
+.myClass {
+  background-color: #000521;
+}
+
+.InputPrompt_ar {
+
+  color: white;
+  padding: 20px;
+  padding-bottom: 20px;
+  overflow-y: scroll;
+  height: 92%;
+
+}
+
+.InputPrompt_ar>label {
+  font-size: 14px;
+  padding-bottom: 20px;
+  width: 100%;
+  margin: auto;
+}
+
+.InputPrompt_ar>label>p {
+  background-color: #171f50;
+  padding: 5px 10px;
+  float: right;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.InputPrompt_ar>label>a {
+  float: right;
+  font-size: 14px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+
+.InputPrompt_ar_textarea {
+  color: hsl(0, 0%, 100%, 44%);
+  width: 100%;
+  max-height: 50%;
+  border-radius: 10px;
+  border: 0px solid transparent;
+  background-color: #000521;
+  padding: 10px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.styles_grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  /* background-color: aliceblue; */
+  padding-bottom: 10px;
+  width: fit-content;
+
+}
+
+.styles_grid>span {
+  color: white;
+  display: flex;
+  width: fit-content;
+  padding: 5px;
+  margin: 5px;
+  border: 0.5px solid transparent;
+  outline: 0.5px solid #000521;
+  background-color: #000521;
+  border-radius: 5px;
+}
+
+.styles_grid>span:active {
+  background-color: #000521;
+}
+
+.styles_grid>span>img {
+  width: 30px;
+  border-radius: 5px;
+}
+
+.styles_grid>span>p {
+  padding: 0px 8px;
+  font-size: 12px;
+  text-align: center;
+  margin: auto;
+}
+
+.promptsubmit {
+  background-color: #7745FF;
+  width: 100%;
+  height: 8%;
+  border: 0px solid transparent;
+  border-radius: 0 0 10px 15px;
+  position: sticky;
+  bottom: -20px;
+}
+
+.Sketchsubmit_btn {
+  color: white;
+  font-weight: 600;
+  background-color: transparent;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  border: 0px solid transparent;
+  border-radius: 0 0 10px 15px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px transparent;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #000521;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #000521;
+}
+
+.styles_grid_selectsize {
+  display: flex;
+  font-size: 14px;
+  /* background-color: #7745FF; */
+  width: 100%;
+}
+
+.styles_grid_selectimgcount {
+  /* background-color: aqua; */
+
+}
+
+.styles_grid_selectsize>label {
+  width: 40%;
+  margin: auto;
+  color: white;
+  /* background-color: aliceblue; */
+}
+
+.styles_grid_selectimgcount>label {
+  width: 100px;
+  margin: auto;
+  color: white;
+  /* background-color: aliceblue; */
+}
+
+.styles_grid_selectimgcount {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+}
+
+.styles_grid_selectsize>select,
+.styles_grid_selectimgcount>select {
+  background-color: #000521;
+  color: hsl(0, 0%, 100%, 44%);
+  margin: 20px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 5px solid #000521;
+  font-size: 14px;
+  width: 60%;
+  /* text-align: center; */
+}
+
+.styles_grid>.ratio_11 {
+  width: 40px;
+  height: 40px;
+
+}
+
+.styles_grid>.ratio_43 {
+  width: 40px;
+  height: 30px;
+  background-color: transparent;
+  outline: .5px solid #000521;
+}
+
+.styles_grid>.ratio_34 {
+  width: 30px;
+  height: 40px;
+}
+
+.styles_grid>.ratio_169 {
+  width: 50px;
+  height: 25px;
+}
+
+.styles_grid>.ratio_916 {
+  width: 25px;
+  height: 40px;
+}
+
+.more_settings {
+  width: 100%;
+  background-color: rgba(23, 30, 79, 0.5);
+  border-radius: 10px;
+font-size: 14px;
+  padding: 5px 0;
+  text-align: center;
+  cursor: pointer;
+  color: rgb(133, 147, 255);
+  margin-bottom: 20px;
+}
+
+
+.more_settings>label {
+
+  text-align: center;
+  font-size: 14px;
+  width: 100%;
+  padding: 10px 0px;
+}
+.inmoresetting{
+  background-color: rgba(23, 30, 79, 0.5);
+  width: 100%;
+  color: white;
+  padding: 10px 10px;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 10px;
+  
+}
+
+
+.InputPrompt_ar>label>p {
+  float: right;
+  background-color: #171f50;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: ;
+}
