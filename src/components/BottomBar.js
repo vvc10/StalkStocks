@@ -8,7 +8,7 @@ const BottomBar = () => {
                 <ul>
                     <li className="nav-item">
                         {/* <svg class="bi me-2" width="16" height="16"><use xlink: href="#home" /></svg> */}
-                        <NavLink exact activeClassName="active" to="/GenerateImg" className='nav-item-link'>Generate</NavLink>
+                        <NavLink exact activeClassName="active" to="/" className='nav-item-link'>Generate</NavLink>
                     </li>
                     <li >
                         {/* <svg class="bi me-2" width="16" height="16"><use xlink: href="#speedometer2" /></svg> */}

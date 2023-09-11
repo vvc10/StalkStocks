@@ -23,7 +23,7 @@ const Navbar = () => {
             <nav class="navbar navbar-expand-lg" style={{ backgroundColor: '#000521', padding: '20px 0' }}>
                 <div className="container-fluid">
 
-                    <a class="navbar-brand" href="/GenerateImg" style={{ paddingLeft: '2%', color: 'white', fontWeight: '600' }}> <img src={LogoI} /> Sketchit</a>
+                    <a class="navbar-brand" href="/" style={{ paddingLeft: '2%', color: 'white', fontWeight: '600' }}> <img src={LogoI} /> Sketchit</a>
                     <form class="d-flex" style={{ paddingLeft: '10%' }}>
                         <input class="form_control me-2" type="search" placeholder="Search ImgGen.." aria-label="Search" />
                         {/* <button class="btn btn-outline-success" type="submit">Search</button> */}
