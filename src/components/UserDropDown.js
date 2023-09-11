@@ -43,10 +43,10 @@ function UserDropDown(handleLogin, handleLogout) {
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu>
-                            <Dropdown.Item href="#/action-1" style={{ backgroundColor: 'transparent' }}>
+                            <Dropdown.Item href="#/action-1" style={{ backgroundColor: 'transparent'}}>
                                 <div style={{ display: 'flex', fontSize: '14px', backgroundColor: 'transparent' }}>
                                     <img src={user.photoURL} style={{ height: '30px', borderRadius: '20px', margin: '0 10px' }} />
-                                    <div style={{ padding: '0 10px' }}><span style={{ fontSize: '14px', fontWeight: '600' }}>{user.displayName}</span><p>{user.email}</p></div>
+                                    <div style={{ padding: '0 10px', backgroundColor:'transparent', width:'' }}><span style={{ fontSize: '14px', fontWeight: '600' }}>{user.displayName}</span><p style={{width: ''}}>{user.email}</p></div>
 
                                 </div>
                                 <button style={{ backgroundColor: '', border: '0px solid', width: '100%', textAlign: 'center', borderRadius: '10px', padding: '5px 0px' }}>View profile</button>

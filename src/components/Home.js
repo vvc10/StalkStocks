@@ -7,7 +7,7 @@ import './main.css'
 // import { initializeApp } from "firebase/app";
 import './main.css'
 import InputPrompt from './InputPrompt'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Explore from './Explore';
 // import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
@@ -16,18 +16,14 @@ import Login from './Login.js';
 import GenerateImg from './GenerateImg.js';
 import MyPosts from './MyPosts.js';
 import WhatNews from './WhatNews.js';
+import Footer from './Footer.js';
+import BottomBar from './BottomBar.js';
+
+import { Auth, db, storage } from '../firebase-config';
+import { useAuthState } from "react-firebase-hooks/auth"
 function Home() {
-
-
-    const stylesidebar = {
-        width: '15%',
-        height: '90vh',
-        color: 'white',
-        backgroundColor: '#000521',
-        padding: '20px'
-
-    }
-
+    const [user] = useAuthState(Auth)
+  
     const ulstyle = {
         color: 'white'
     }
@@ -39,13 +35,13 @@ function Home() {
 
             <div className="main_ar" style={{ display: 'flex', backgroundColor: '#000521' }}>
 
-                <div className="d-flex flex-column flex-shrink-0" style={stylesidebar}>
+                <div className="sidebar_home">
 
                     <ul className="nav nav-pills flex-column mb-auto" style={ulstyle}>
 
                         <li className="nav-item" style={ulstyle}>
                             {/* <svg class="bi me-2" width="16" height="16"><use xlink: href="#home" /></svg> */}
-                            <NavLink exact activeClassName="active" to="/GenerateImg" className='nav-item-link'>Generate</NavLink>
+                            <NavLink exact to="/" activeClassName="active">Generate</NavLink>
                         </li>
                         <li >
                             {/* <svg class="bi me-2" width="16" height="16"><use xlink: href="#speedometer2" /></svg> */}
@@ -53,7 +49,7 @@ function Home() {
                         </li>
                         <li>
                             {/* <svg class="bi me-2" width="16" height="16"><use xlink: href="#table" /></svg> */}
-                            <NavLink to="/myposts">My Posts</NavLink>
+                            <NavLink activeClassName="active" to="/myposts">My Posts</NavLink>
                         </li>
 
                         <li>
@@ -73,21 +69,29 @@ function Home() {
                 <div className='main_center'>
 
                     <Routes>
-                        {/* <Route exact path='/' element={<ImageFrame />}></Route> */}
-
-                        <Route exact path='/GenerateImg' element={< GenerateImg />}></Route>
+                        {user ? (<>
+                                      <Route exact path='/' element={< GenerateImg />}></Route>
 
                         <Route exact path='/myposts' element={< MyPosts />}></Route>
 
                         <Route exact path='/explore' element={< Explore />}></Route>
-                        <Route exact path='/whatnews' element={<WhatNews />}></Route>
-                        {/* <Route path='/login' element={<Login/>}/> */}
+                        <Route exact path='/whatnews' element={<WhatNews />}></Route> 
+                        </>
+             
+                        )
+                            : (
+                                <></>
+                            )
+                        }
+                      
+
                     </Routes>
 
                 </div>
 
             </div>
-
+            <BottomBar />
+            <Footer />
 
         </>
 

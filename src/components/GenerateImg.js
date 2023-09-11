@@ -10,7 +10,7 @@ import { useAuthState } from "react-firebase-hooks/auth"
 import { API_TOKEN } from "../firebase-config";
 import Loader from "./Loader";
 import './main.css'
-import catLogo from '../assets/images/catlogo.png';
+import LogoI from '../assets/images/logo_i.png';
 import getRandomPrompt from "../utils";
 import Download from '../assets/images/downloads.png';
 import Share from '../assets/images/share.png'
@@ -90,28 +90,28 @@ const GenerateImg = () => {
         getpromptinput.value = getRandomPrompt();
 
     }
- 
+
     const OpenMoreSettings = () => {
- 
+
         const gotmoresetting = document.getElementsByClassName("OpenMoreSettings");
-        
+
     }
     return (<div className="imageGen">
         <div className="GI_left">
             {
                 !loading && !output && (
-                    <div className="before_sketching"><img src={catLogo}/><br/>Your Sketch will appear here..</div>
+                    <div className="before_sketching"><img src={LogoI} /><br />Your Sketch will appear here..</div>
                 )
 
             }
-            {loading && <div className="loading_gen"><Loader/><br/><label>wait, sketching it..</label></div>}
+            {loading && <div className="loading_gen"><Loader /><br /><label>wait, sketching it..</label></div>}
             {!loading && output && (
                 <div className="result-image">
 
                     <img src={output} alt="art" />
                     <div className="action">
-                        <button className="download_btn" onClick={handleDownload}><img src={Download}/></button>
-                        {user && <button className="share_btn" onClick={uploadImage}><img src={Share}/></button>}
+                        <button className="download_btn" onClick={handleDownload}><img src={Download} /></button>
+                        {user && <button className="share_btn" onClick={uploadImage}><img src={Share} /></button>}
                     </div>
                 </div>
             )}
@@ -162,7 +162,7 @@ const GenerateImg = () => {
                         + Show more
 
                     </div>
-                    <div  className="inmoresetting">More settings arriving soon..</div>
+                    <div className="inmoresetting">More settings arriving soon..</div>
                 </div>
                 <div className='promptsubmit'>
                     <button type='submit' className='Sketchsubmit_btn'> {loading ? 'Sketching...' : 'Sketchit'}  </button>

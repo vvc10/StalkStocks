@@ -5,6 +5,7 @@ import Login from './components/Login.js';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Auth } from "./firebase-config.js"
+
 function App() {
   const [user] = useAuthState(Auth)
 
@@ -17,6 +18,7 @@ function App() {
           <Router>
             {
              user ? (
+          
                <Home />
              )
              : (

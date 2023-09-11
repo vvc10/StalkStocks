@@ -67,7 +67,7 @@ const MyPosts = () => {
                 Showing Resuls for <span className="text-[#222328]">{searchText}</span>:
               </h2>
             )}
-            <div  style={{ height:'76vh', display: 'grid', gridTemplateColumns: 'auto auto auto auto', gridColumnGap: '10px', overflow: "scroll"}}>
+            <div className='mypost_sec_line' style={{ height:'76vh', display: 'grid', gridTemplateColumns: 'auto auto auto auto', gridColumnGap: '10px', overflow: "scroll"}}>
               {searchText && searchedResults ? (
                 searchedResults.map(post=>(
                 <DisplayPosts
