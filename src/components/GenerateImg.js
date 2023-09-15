@@ -96,34 +96,35 @@ const GenerateImg = () => {
         const gotmoresetting = document.getElementsByClassName("OpenMoreSettings");
 
     }
-    return (<div className="imageGen">
-        <div className="GI_left">
-            {
-                !loading && !output && (
-                    <div className="before_sketching"><img src={LogoI} /><br />Your Sketch will appear here..</div>
-                )
+    return (
+        <div className="imageGen">
+            <div className="GI_left">
+                {
+                    !loading && !output && (
+                        <div className="before_sketching"><img src={LogoI} /><br />Your Sketch will appear here..</div>
+                    )
 
-            }
-            {loading && <div className="loading_gen"><Loader /><br /><label>wait, sketching it..</label></div>}
-            {!loading && output && (
-                <div className="result-image">
+                }
+                {loading && <div className="loading_gen"><Loader /><br /><label>wait, sketching it..</label></div>}
+                {!loading && output && (
+                    <div className="result-image">
 
-                    <img src={output} alt="art" />
-                    <div className="action">
-                        <button className="download_btn" onClick={handleDownload}><img src={Download} /></button>
-                        {user && <button className="share_btn" onClick={uploadImage}><img src={Share} /></button>}
+                        <img src={output} alt="art" />
+                        <div className="action">
+                            <button className="download_btn" onClick={handleDownload}><img src={Download} /></button>
+                            {user && <button className="share_btn" onClick={uploadImage}><img src={Share} /></button>}
+                        </div>
                     </div>
-                </div>
-            )}
-        </div>
-        <div className="GI_right_input">
-            <form className="generate-form" onSubmit={handleSubmit}>
-                <div className="generate-form-div">
-                    <label >Describe your Sketch  <p onClick={handlesurpise}>Surprise me ⚡ </p> </label><br />
-                    <textarea type="text" id="Inputprompt" name="input" placeholder="type your prompt here..." />
+                )}
+            </div>
+            <div className="GI_right_input">
+                <form className="generate-form" onSubmit={handleSubmit}>
+                    <div className="generate-form-div">
+                        <label >Describe your Sketch  <p onClick={handlesurpise}>Surprise me ⚡</p> </label><br />
+                        <textarea type="text" id="Inputprompt" name="input" placeholder="type your prompt here..." />
 
-                    {/* <button type="submit" className="button">Generate</button> */}
-                    {/* <label>Style <a href=''>+ more styles</a></label>
+                        {/* <button type="submit" className="button">Generate</button> */}
+                        {/* <label>Style <a href=''>+ more styles</a></label>
                     <div className='styles_grid'>
                         <span><img src='https://hotpot.ai/images/site/ai/art_maker/style_catalog/hotpot_art_9.jpg' /> <p>Cartoon</p></span>
                         <span><img src='https://hotpot.ai/images/site/ai/art_maker/style_catalog/illustration_general_2.jpg' /><p>Vector</p></span>
@@ -158,20 +159,20 @@ const GenerateImg = () => {
                     <label style={{marginBottom: "10px"}}>Negative Prompt</label><br />
                     <textarea className='InputPrompt_ar_textarea' placeholder="what not to include?">
                     </textarea> */}
-                    <div className='more_settings' onClick={OpenMoreSettings()}>
-                        + Show more
+                        <div className='more_settings' onClick={OpenMoreSettings()}>
+                            + Show more
 
+                        </div>
+                        <div className="inmoresetting">More settings arriving soon..</div>
                     </div>
-                    <div className="inmoresetting">More settings arriving soon..</div>
-                </div>
-                <div className='promptsubmit'>
-                    <button type='submit' className='Sketchsubmit_btn'> {loading ? 'Sketching...' : 'Sketchit'}  </button>
-                </div>
+                    <div className='promptsubmit'>
+                        <button type='submit' className='Sketchsubmit_btn'> {loading ? 'Sketching...' : 'Sketchit'}  </button>
+                    </div>
 
-            </form>
+                </form>
 
+            </div>
         </div>
-    </div>
     );
 
 };

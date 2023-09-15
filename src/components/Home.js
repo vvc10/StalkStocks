@@ -23,7 +23,7 @@ import { Auth, db, storage } from '../firebase-config';
 import { useAuthState } from "react-firebase-hooks/auth"
 function Home() {
     const [user] = useAuthState(Auth)
-  
+
     const ulstyle = {
         color: 'white'
     }
@@ -70,28 +70,29 @@ function Home() {
 
                     <Routes>
                         {user ? (<>
-                                      <Route exact path='/' element={< GenerateImg />}></Route>
+                            <Route exact path='/' element={< GenerateImg />}></Route>
 
-                        <Route exact path='/myposts' element={< MyPosts />}></Route>
+                            <Route exact path='/myposts' element={< MyPosts />}></Route>
 
-                        <Route exact path='/explore' element={< Explore />}></Route>
-                        <Route exact path='/whatnews' element={<WhatNews />}></Route> 
+                            <Route exact path='/explore' element={< Explore />}></Route>
+                            <Route exact path='/whatnews' element={<WhatNews />}></Route>
                         </>
-             
+
                         )
                             : (
                                 <></>
                             )
                         }
-                      
+
 
                     </Routes>
 
                 </div>
 
             </div>
-            <BottomBar />
             <Footer />
+            <BottomBar />
+
 
         </>
 

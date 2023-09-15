@@ -5,16 +5,15 @@ import Login from './components/Login.js';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Auth } from "./firebase-config.js"
-
+import Test from './components/Test.js';
 function App() {
   const [user] = useAuthState(Auth)
 
   return (
     <>
-
-         
-
-        
+    
+<Test/>
+{/*         
           <Router>
             {
              user ? (
@@ -28,7 +27,7 @@ function App() {
              )
             }
             
-          </Router>
+          </Router> */}
 
      
 

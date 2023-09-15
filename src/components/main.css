@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300&family=Montserrat&display=swap');
 
 * {
+   
     font-family: 'League Spartan', sans-serif;
 }
-
+body{
+    background-color: #000521;
+}
 .account_btn:focus {
     background-color: #7745FF;
 }
@@ -458,10 +461,12 @@ outline: 0px solid transparent;
 }
 
 .footer_sec {
+    z-index: 1000;
     background-color: #000521;
 }
 
 .footer_sec>.footer_dev {
+    /* background-color: #7745FF; */
     color: #bcbfd1;
     font-size: 14px;
     text-align: center;
@@ -471,7 +476,7 @@ outline: 0px solid transparent;
 
 .res_bottombar {
     display: none;
-    background-color: #7745FF;
+ 
     height: 100px;
 }
 
@@ -533,12 +538,15 @@ outline: 0px solid transparent;
         position: relative;
         /* left: 10vw; */
     }
-
+.main_ar{
+    display: block;
+    background-color: red; 
+}
     .main_ar>.sidebar_dnone {
         background-color: #7745FF;
         display: none;
     }
-
+ 
     .res_bottombar {
         background-color: #000521;
         border-top: 1px solid #272d50;
@@ -590,7 +598,9 @@ outline: 0px solid transparent;
 
     .imageGen {
         /* background-color: #6a77c3; */
-        width: 100vw;
+        width: 99vw;
+        display: block;
+        height: fit-content;
     }
     .mypost_tab, .explore_tab, .whatnews_tab {
         /* background-color: #6a77c3; */
@@ -600,25 +610,41 @@ outline: 0px solid transparent;
     .GI_left {
         background-color: #111631;
         /* background-color: #7745FF; */
-        width: 60%;
-        height: 85vh;
+        width: 92%;
+        height: fit-content;
         border-radius: 15px;
-        margin: 0 20px;
+        margin: 0 auto;
         padding: 20px;
         outline: .5px solid #272d50;
     }
-
+ 
+    .before_sketching {
+        color: rgb(201, 201, 201);
+        /* background-color: aliceblue; */
+        margin: 10vh auto;
+        width: -moz-fit-content;
+        width: fit-content;
+        text-align: center;
+        font-weight: 600;
+        font-size: 14px;
+    }
     .GI_right_input {
         background-color: #111631;
-        width: 40%;
-        height: 85vh;
+        width: 92%;
+        height: 45vh;
         max-height: 85vh;
         border-radius: 15px;
-        margin: 0 10px;
+        margin: 20px auto;
         outline: .5px solid #272d50;
-
+    
     }
-
+    .main_center {
+        background-color: transparent;
+        width: 85%;
+        height: 100%;
+        border-radius: 15px;
+        margin: 0px;
+    }
     .result-image {
         height: 40vw;
         border-radius: 10px;
@@ -632,6 +658,21 @@ outline: 0px solid transparent;
         margin-bottom: 15px;
         width: fit-content;
     }
+    .footer_sec {
+        margin-bottom: 11vh;
+        z-index: 1000;
+        /* background-color: #1e2f8b; */
+    }
+    .generate-form>.promptsubmit {
+        background-color: #7745FF;
+        width: 100%;
+        height: 15%;
+        border: 0px solid transparent;
+        border-radius: 0 0 10px 15px;
+        position: sticky;
+        bottom: -20px;
+    }
+    
 }
 
 @media only screen and (max-width: 590px) {
@@ -653,7 +694,6 @@ outline: 0px solid transparent;
         height: 76vh;
         display: grid;
         grid-template-columns: 10px 10px 10px;
-      
         grid-column-gap: 20px;
         overflow: scroll;
     }
