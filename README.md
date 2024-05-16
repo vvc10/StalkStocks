@@ -1,1 +1,0 @@
-# StalkStocks- A Stocks Stalker

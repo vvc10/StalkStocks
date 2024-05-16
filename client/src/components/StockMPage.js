@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Modal from '@mui/material/Modal';
 import { Box, Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, MenuItem, Select, FormControl, InputLabel, FormGroup, FormControlLabel, Checkbox } from '@mui/material';
-import './StockMPage.css'; // Import your custom CSS file
+import './StockMPage.css'; // Importing custom CSS file
+import TrendingStocks from './TrendingStocks';
 
 const demoStocks = [
   { symbol: 'AAPL', name: 'Apple Inc.' },
@@ -35,17 +36,14 @@ const StockMPage = () => {
   };
 
   const handleAddStock = () => {
-    const trimmedSymbol = newStock.symbol.trim().toUpperCase();
-    if (trimmedSymbol !== '' && !stocks.find(stock => stock.symbol === trimmedSymbol)) {
-      fetchStockData(trimmedSymbol);
+    if (newStock.symbol.trim() !== '') {
+      fetchStockData(newStock.symbol.trim());
       setIsModalOpen(false);
-    } else {
-      alert('Stock already exists in the list or input is empty');
     }
   };
 
   const fetchStockData = async (symbol) => {
-    const API_KEY = 'YOUR_ALPHA_VANTAGE_API_KEY'; // Replace with your API key
+    const API_KEY = 'QSK4LPPI7UZIW4PF'; // Replace with your API key
     const API_URL = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}&apikey=${API_KEY}`;
 
     try {
@@ -92,6 +90,10 @@ const StockMPage = () => {
 
   return (
     <div className="stock-manager-page">
+      <div className='trending-stocks-bar'>
+        <TrendingStocks />
+
+      </div>
       <div className="option-bar">
         <button className="add-stock-btn" onClick={() => setIsModalOpen(true)}>Add Stock</button>
       </div>
