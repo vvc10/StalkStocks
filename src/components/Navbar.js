@@ -1,62 +1,48 @@
 import React from 'react';
-// import styles from './styles.module.css';
-import UserDropDown from './UserDropDown.js'
-import './main.css'
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { Auth } from "../firebase-config"
-import { signOut } from 'firebase/auth';
-// import LogoutIcon from '@mui/icons-material/Logout';
-import { NavLink } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
-import LogoI from '../assets/images/logo_i.png';
-const Navbar = () => {
-    const [user] = useAuthState(Auth)
-    const navigator = useNavigate()
-    const logOut = async () => {
-        await signOut(Auth)
-        navigator("/login")
-    }
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import InputBase from '@mui/material/InputBase';
+import MenuIcon from '@mui/icons-material/Menu';
+import SearchIcon from '@mui/icons-material/Search';
 
+import './Navbar.css'; // Import your custom CSS file
 
-    return (
-        <div className="home">
-            <nav class="navbar navbar-expand-lg" style={{ backgroundColor: '#000521', padding: '20px 0' }}>
-                <div className="container-fluid">
-
-                    <a class="navbar-brand" href="/" style={{ paddingLeft: '2%', color: 'white', fontWeight: '600' }}> <img src={LogoI} /> Sketchit</a>
-                    <form class="d-flex" style={{ paddingLeft: '10%' }}>
-                        <input class="form_control me-2" type="search" placeholder="Search ImgGen.." aria-label="Search" />
-                        {/* <button class="btn btn-outline-success" type="submit">Search</button> */}
-                    </form>
-
-                    <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
-                        <ul class="navbar-nav me-auto mb-lg-0">
-                            <li class="nav-item">
-                                <NavLink class="nav-link disabled" aria-current="page" to='#'>Blog</NavLink>
-                            </li>
-                            <li class="nav-item">
-                                <NavLink class="nav-link disabled" to='#'>Faqs</NavLink>
-                            </li>
-                            <li class="nav-item">
-                                <NavLink class="nav-link disabled" to='#' tabindex="-1" aria-disabled="true">Disabled</NavLink>
-                            </li>
-                        </ul>
-
-                    </div>
-                    {user ?
-                        <div className='link'>
-                            <div className='d-flex'>
-
-                                {/* <img className='logo' src={user.photoURL} alt="" /> */}
-                                <UserDropDown /></div>
-                        </div>
-                        : <NavLink className='link' to="/login">Login</NavLink>
-                    }
-                </div>
-            </nav>
-        </div>
-
-    )
+export default function Navbar() {
+  return (
+    <div className="navbar">
+      <AppBar position="static">
+        <Toolbar>
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="open drawer"
+            className="menuIcon"
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            className="title"
+          >
+            Stocks Overview
+          </Typography>
+          <div className="searchContainer">
+            <div className="searchIconWrapper">
+              <SearchIcon />
+            </div>
+            <InputBase
+              placeholder="Search…"
+              inputProps={{ 'aria-label': 'search' }}
+              className="inputBase"
+            />
+          </div>
+        </Toolbar>
+      </AppBar>
+    </div>
+  );
 }
-
-export default Navbar

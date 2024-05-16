@@ -5,7 +5,7 @@
     font-family: 'League Spartan', sans-serif;
 }
 body{
-    background-color: #000521;
+    /* background-color: #000521; */
 }
 .account_btn:focus {
     background-color: #7745FF;

@@ -1,0 +1,71 @@
+.stock-manager-page {
+    margin: 0 auto;
+    max-width: 85%;
+    width: 85%;
+    padding: 20px;
+    background-color: rgb(237, 237, 237);
+  }
+  
+  .option-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    background-color: white;
+  }
+  
+  .option-bar-l {
+    width: 90%;
+    font-weight: 500;
+    text-align: left;
+  }
+  
+  .add-stock-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 10%;
+  }
+  
+  .stock-table {
+    margin-top: 20px;
+    padding: 10px 20px;
+  }
+  
+  .custom-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 60%;
+  }
+  
+  .latest-prices {
+    margin-bottom: 20px;
+  }
+  
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .stock-card {
+    width: calc(25% - 20px);
+  }
+  
+  @media (max-width: 768px) {
+    .stock-card {
+      width: calc(50% - 20px);
+    }
+  }
+  

@@ -1,40 +1,13 @@
-// import logo from './logo.svg';
-import './App.css';
-import Home from './components/Home.js';
-import Login from './components/Login.js';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { Auth } from "./firebase-config.js"
-import Test from './components/Test.js';
-function App() {
-  const [user] = useAuthState(Auth)
+import React from 'react'
+import Home from './components/Home'
 
+const App = () => {
   return (
-    <>
+    <div>
     
-<Test/>
-{/*         
-          <Router>
-            {
-             user ? (
-          
-               <Home />
-             )
-             : (
-              <Routes>
-              <Route path='/login' element={<Login />} />
-            </Routes>
-             )
-            }
-            
-          </Router> */}
-
-     
-
-
-    </>
-
-  );
+      <Home/>
+    </div>
+  )
 }
 
-export default App;
+export default App
